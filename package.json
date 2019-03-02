@@ -1,0 +1,29 @@
+{
+  "name": "fun-encryption",
+  "version": "1.0.0",
+  "description": "A simple yet fun encryption with JS",
+  "main": "encrypt.js",
+  "dependencies": {
+    "atob": "^2.1.2",
+    "btoa": "^1.2.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fannyhasbi/fun-encryption.git"
+  },
+  "keywords": [
+    "fun",
+    "encryption",
+    "simple encryption"
+  ],
+  "author": "Fanny Hasbi",
+  "bugs": {
+    "url": "https://github.com/fannyhasbi/fun-encryption/issues"
+  },
+  "homepage": "https://github.com/fannyhasbi/fun-encryption#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}
