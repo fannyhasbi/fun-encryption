@@ -1,10 +1,11 @@
 "use strict"
 
+const atob = require('atob');
 const btoa = require('btoa');
 const MESSAGE = "HASBI";
 const KEY = "HOKBEN";
 
-var encrypt = (message, pattern) => {
+var encrypt = (message, key) => {
   var result = [];
   /**
     * ASCII CAPITAL LETTER : 65 - 90
@@ -12,12 +13,28 @@ var encrypt = (message, pattern) => {
 
   for(let i = 0; i < message.length; i++){
     let a = message.charCodeAt(i);
-    let shifter = KEY.charCodeAt(Math.floor(i % KEY.length));
+    let shifter = key.charCodeAt(Math.floor(i % key.length));
     result.push(a^shifter);
   }
   return btoa(result);
 }
 
-let secret = encrypt(MESSAGE, KEY);
+var decrypt = (secret, key) => {
+  var secret = atob(secret).split(",");
+  var result = [];
 
-console.log(secret);
+  secret.forEach((e, i) => {
+    let shifter = key.charCodeAt(Math.floor(i % key.length));
+    let b = String.fromCharCode(e ^ shifter);
+
+    result.push(b);
+  });
+
+  return result.join("");
+}
+
+let secret = encrypt(MESSAGE, KEY);
+let origin = decrypt(secret, KEY);
+
+// console.log(secret);
+console.log(origin);
