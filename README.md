@@ -29,8 +29,8 @@ secret = base64(m XOR k)
    ```
 
 3. Run it
-  ```
-  node encrypt.js
-  ```
+   ```
+   node encrypt.js
+   ```
 
    > Feel free to change the `MESSAGE` and `KEY` constant to your own value
